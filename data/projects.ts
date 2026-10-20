@@ -10,13 +10,56 @@ export type Project = {
   github?: string;
   demo?: string;
 };
-// Add verified repository and demo URLs here; absent links are intentionally omitted.
+// Curated from public repositories; demo URLs come from repository metadata.
 export const projects: Project[] = [
   {
-    id: "smart-twin",
+    id: "dreamx",
     number: "01",
+    name: "DreamX",
+    category: "Full-stack commerce",
+    description:
+      "Product discovery, shopping, and account management in one application.",
+    implementation:
+      "A Next.js storefront backed by Express APIs and MongoDB. Built product browsing, a persistent cart, account-based wishlists, and JWT authentication with protected admin endpoints.",
+    decision:
+      "Separated the storefront and API into independent services. Authentication middleware verifies JWTs and loads the user before checking admin permissions; browser-local cart state and database-backed wishlists serve different persistence needs.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Express",
+      "MongoDB",
+      "JWT",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/ADARSH1115/dreamx-ecommerce",
+    demo: "https://dreamx-frontend.vercel.app/",
+  },
+  {
+    id: "gaming-leaderboard",
+    number: "02",
+    name: "Gaming Leaderboard",
+    category: "Backend systems",
+    description:
+      "Keeping player scores durable and rankings quick to retrieve.",
+    implementation:
+      "A Node.js API with PostgreSQL, Prisma, and Redis, paired with a React dashboard for score submission and player lookup. Caches top-player responses and individual rankings.",
+    decision:
+      "Writes game sessions and score increments in a database transaction, then updates Redis sorted sets. Rank lookup falls back to PostgreSQL when Redis has no result, keeping durable storage separate from the ranking cache.",
+    technologies: [
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Redis",
+      "Prisma",
+      "React",
+    ],
+    github: "https://github.com/ADARSH1115/gaming-leaderboard",
+  },
+  {
+    id: "smart-twin",
+    number: "03",
     name: "Smart Twin",
-    category: "Applied AI / ML · Industrial IoT",
+    category: "Internship project · Applied AI / IIoT",
     description: "From sensor signals to machine-health insights.",
     implementation:
       "A predictive-maintenance application built during my BEST internship. A Python/Flask backend processes ESP32 telemetry and runs XGBoost inference; a React dashboard presents readings, fault probabilities, and maintenance recommendations.",
@@ -25,39 +68,25 @@ export const projects: Project[] = [
     technologies: ["Python", "Flask", "React", "ESP32", "XGBoost", "REST APIs"],
   },
   {
-    id: "dreamx",
-    number: "02",
-    name: "DreamX",
-    category: "Full-stack development",
-    description: "A storefront with a complete application behind it.",
-    implementation:
-      "An e-commerce application with product browsing and filtering, a persistent shopping cart, JWT authentication, and MongoDB-backed application data.",
-    decision:
-      "Connected reusable React components and application state to Node.js APIs, with role-based route protection and persistence across the shopping experience.",
-    technologies: ["React", "Tailwind CSS", "Node.js", "MongoDB", "JWT"],
-  },
-  {
-    id: "warehouse",
-    number: "03",
-    name: "Data Warehouse & ETL",
-    category: "Data engineering",
-    description: "Turning fragmented source data into a structured foundation.",
-    implementation:
-      "A Bronze–Silver–Gold workflow bringing together more than seven CRM and ERP datasets. SQL transformations, stored procedures, and PySpark processing prepare data for downstream analytics.",
-    decision:
-      "Separated raw ingestion, data-quality transformations, and analytics-ready models, using a star schema with fact and dimension tables.",
-    technologies: ["SQL Server", "SQL", "SSMS", "PySpark", "Star schema"],
-  },
-  {
-    id: "pdf-trainer",
+    id: "quiz-masters",
     number: "04",
-    name: "GenAI PDF Trainer",
-    category: "Generative AI · Experimental",
-    description: "Exploring how language models learn from documents.",
+    name: "Quiz Masters",
+    category: "Frontend application",
+    description:
+      "A subject-based quiz experience with a personal score history.",
     implementation:
-      "An experimental application combining PDF text extraction, text preparation, DistilGPT-2 fine-tuning, and a small retrieval-based workflow to support document-grounded responses.",
+      "A React application with subject selection, client-side page routing, and score history stored in the browser. Organizes Math, JavaScript, HTML, and CSS into reusable subject cards.",
     decision:
-      "Explored both model training and retrieval of relevant passages. This is a learning project, without claims of production readiness or evaluated response quality.",
-    technologies: ["Python", "PyTorch", "PdfPlumber", "DistilGPT-2"],
+      "Kept score history in localStorage for persistence on the same browser without an account. React Router separates the home, about, and contact pages; shared components keep navigation and subject presentation consistent.",
+    technologies: [
+      "React",
+      "JavaScript",
+      "Vite",
+      "React Router",
+      "Tailwind CSS",
+      "localStorage",
+    ],
+    github: "https://github.com/ADARSH1115/quiz-masters",
+    demo: "https://quiz-masters-project.vercel.app",
   },
 ];

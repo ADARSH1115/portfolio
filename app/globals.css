@@ -370,7 +370,7 @@ h2 {
   margin: 0;
 }
 .section-heading > p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.8;
   color: var(--muted);
   margin: 0 0 2px;
@@ -394,7 +394,7 @@ h2 {
   border-color: #aab9a4;
   box-shadow: 0 8px 25px #1c3f2110;
 }
-.project-smart-twin {
+.project-dreamx {
   grid-column: 1/-1;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -417,7 +417,7 @@ h2 {
   margin: 0 0 10px;
 }
 .project-body > p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.8;
   color: var(--muted);
   margin: 10px 0;
@@ -834,7 +834,7 @@ details p {
 }
 .experience-content li {
   padding-left: 7px;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.85;
   margin: 10px 0;
   color: var(--muted);
@@ -865,7 +865,7 @@ details p {
   margin: 0 0 12px;
 }
 .skill p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.9;
   color: var(--muted);
   margin: 0;
@@ -1062,7 +1062,7 @@ details p {
   .hero-foot span + span:before {
     margin-right: 15px;
   }
-  .project-smart-twin {
+  .project-dreamx {
     grid-template-columns: 1fr;
   }
   .twin {
@@ -1484,5 +1484,264 @@ details p {
   .node-ai {
     left: 8%;
     bottom: 0;
+  }
+}
+
+/* Recruiter-facing hierarchy and project architecture. */
+.hero-description {
+  font-size: 16px;
+  max-width: 490px;
+}
+.hero-actions {
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.button {
+  font-size: 14px;
+  min-height: 48px;
+  gap: 12px;
+}
+.button-secondary {
+  border: 1px solid #b9c8b5;
+  color: var(--green);
+  background: transparent;
+}
+.button-secondary:hover {
+  background: #e8eee3;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+}
+.project-dreamx {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.project-body {
+  flex: 1;
+  padding: 32px;
+}
+.project-body > p {
+  font-size: 15px;
+}
+.project-body .project-hook {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.project-category {
+  font-size: 11px;
+  line-height: 1.6;
+}
+.technology-list li {
+  font-size: 11px;
+  padding: 6px 9px;
+}
+.project-links {
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 22px 0;
+  font-size: 14px;
+}
+.project-links a {
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: var(--green);
+  font-weight: 600;
+}
+.project-links a:hover {
+  background: var(--soft);
+  border-color: #aab9a4;
+}
+summary,
+details p {
+  font-size: 14px;
+}
+.architecture-visual {
+  min-height: 330px;
+  padding: 65px 24px 48px;
+}
+.leaderboard-visual {
+  background: #eaf0ed;
+}
+.quiz-visual {
+  background: #f0eee7;
+}
+.architecture-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+.architecture-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 18px 12px;
+  background: #fcfcf9;
+  border: 1px solid #c5d2c3;
+  border-radius: 6px;
+  min-width: 0;
+}
+.architecture-step strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+.architecture-step small {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #53634f;
+}
+.architecture-branches {
+  display: grid;
+  gap: 12px;
+}
+.architecture-arrow {
+  flex-shrink: 0;
+  width: 20px;
+  color: var(--green);
+}
+.quiz-subjects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.quiz-subjects span {
+  font-size: 11px;
+  padding: 7px 10px;
+  border: 1px solid #d4d1c2;
+  border-radius: 20px;
+}
+.social-links a,
+.contact-links,
+.experience-org,
+.education strong {
+  font-size: 14px;
+}
+.section-intro,
+.contact-grid p {
+  font-size: 15px;
+}
+@media (max-width: 1050px) {
+  .project-dreamx {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 760px) {
+  .project-body {
+    padding: 24px;
+  }
+  .hero-description {
+    font-size: 15px;
+  }
+  .hero-copy .eyebrow {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  .architecture-flow {
+    gap: 8px;
+  }
+  .architecture-visual {
+    padding-inline: 16px;
+  }
+  .architecture-step {
+    padding: 14px 8px;
+  }
+  .architecture-step strong {
+    font-size: 12px;
+  }
+  .architecture-step small {
+    font-size: 10px;
+  }
+  .architecture-arrow {
+    width: 16px;
+  }
+}
+
+.project-quiz-masters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: 1 / -1;
+}
+@media (max-width: 760px) {
+  .project-quiz-masters {
+    display: flex;
+  }
+}
+
+/* A stable word hit area keeps hover motion from flickering. */
+.interactive-word,
+.interactive-word-text {
+  display: inline-block;
+}
+.interactive-word {
+  vertical-align: baseline;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .interactive-word-text {
+    transition:
+      transform 220ms ease,
+      color 220ms ease,
+      text-shadow 220ms ease;
+  }
+  .interactive-word:hover > .interactive-word-text {
+    transform: translateY(-3px) rotate(-1deg);
+    color: var(--green);
+    text-shadow: 0 6px 18px #245b4530;
+  }
+}
+.experience-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  padding-block: 48px;
+  border-block: 1px solid var(--line);
+}
+.experience-preview p:last-child {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+.experience-preview .button {
+  flex-shrink: 0;
+}
+.experience-intro {
+  padding-block: 50px 80px;
+}
+.experience-intro > .text-link {
+  margin-bottom: 48px;
+}
+.experience-intro h1 {
+  max-width: 850px;
+}
+.experience-intro .hero-description {
+  max-width: 600px;
+}
+.experience-next {
+  padding-block: 65px;
+}
+.experience-next h2 {
+  margin-bottom: 28px;
+}
+.experience-next > a {
+  margin-right: 20px;
+}
+@media (max-width: 760px) {
+  .experience-preview {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .experience-intro {
+    padding-block: 30px 55px;
+  }
+  .experience-intro > .text-link {
+    margin-bottom: 32px;
   }
 }

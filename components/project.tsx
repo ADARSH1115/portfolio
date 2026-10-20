@@ -1,3 +1,4 @@
+import { InteractiveWords } from "@/components/interactive-words";
 import { ArrowUpRight, Plus } from "lucide-react";
 import { Project } from "@/data/projects";
 import { ProjectVisual } from "./visuals";
@@ -15,7 +16,9 @@ export function ProjectCard({ project }: { project: Project }) {
             {project.number} / {project.category}
           </span>
         </div>
-        <h3>{project.name}</h3>
+        <h3>
+          <InteractiveWords>{project.name}</InteractiveWords>
+        </h3>
         <p className="project-hook">{project.description}</p>
         <p>{project.implementation}</p>
         <ul className="technology-list" aria-label="Technologies">
@@ -23,12 +26,6 @@ export function ProjectCard({ project }: { project: Project }) {
             <li key={tech}>{tech}</li>
           ))}
         </ul>
-        <details>
-          <summary>
-            Engineering notes <Plus size={16} />
-          </summary>
-          <p>{project.decision}</p>
-        </details>
         {(project.github || project.demo) && (
           <div className="project-links">
             {project.github && (
@@ -36,17 +33,29 @@ export function ProjectCard({ project }: { project: Project }) {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Source code for ${project.name}`}
               >
                 Source code <ArrowUpRight size={15} />
               </a>
             )}
             {project.demo && (
-              <a href={project.demo} target="_blank" rel="noopener noreferrer">
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Live demo of ${project.name}`}
+              >
                 Live demo <ArrowUpRight size={15} />
               </a>
             )}
           </div>
         )}
+        <details>
+          <summary>
+            Engineering notes <Plus size={16} />
+          </summary>
+          <p>{project.decision}</p>
+        </details>
       </div>
     </article>
   );

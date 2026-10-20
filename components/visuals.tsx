@@ -3,8 +3,6 @@ import {
   ArrowRight,
   CircuitBoard,
   Database,
-  FileText,
-  Layers,
   LockKeyhole,
   Server,
   ShoppingBag,
@@ -15,7 +13,7 @@ export function HeroVisual() {
     <div
       className="system-visual"
       role="img"
-      aria-label="Software system illustration: input data flows through an API and model into a usable interface"
+      aria-label="Software system illustration: an interface connects to APIs and persistent data"
     >
       <div className="visual-heading">
         <span className="tiny-dot" /> THE ENGINEERING PERSPECTIVE{" "}
@@ -40,8 +38,8 @@ export function HeroVisual() {
         </div>
         <div className="system-node node-ai">
           <Sparkles />
-          <span>Intelligence</span>
-          <small>LEARN & APPLY</small>
+          <span>Interface</span>
+          <small>INTERACT & EXPLORE</small>
         </div>
       </div>
       <div className="visual-bottom">
@@ -122,9 +120,9 @@ export function ProjectVisual({ id }: { id: string }) {
           </div>
         </div>
         <div className="api-strip">
-          <span>React UI</span>
+          <span>Next.js UI</span>
           <ArrowRight size={14} />
-          <span>Node.js + JWT</span>
+          <span>Express + JWT</span>
           <ArrowRight size={14} />
           <span>MongoDB</span>
         </div>
@@ -133,67 +131,67 @@ export function ProjectVisual({ id }: { id: string }) {
         </p>
       </div>
     );
-  if (id === "warehouse")
+  if (id === "gaming-leaderboard")
     return (
-      <div className="project-visual warehouse">
+      <div className="project-visual architecture-visual leaderboard-visual">
         <div className="diagram-top">
-          <span>DATA WAREHOUSE / TRANSFORMATION FLOW</span>
-          <Layers size={17} />
+          <span>LEADERBOARD / STORAGE & RANKING</span>
+          <Database size={17} />
         </div>
-        <div className="warehouse-flow">
-          <div className="source-label">
-            CRM / ERP<small>7+ source datasets</small>
+        <div className="architecture-flow">
+          <div className="architecture-step">
+            <Server />
+            <strong>Express API</strong>
+            <small>Submit scores · look up ranks</small>
           </div>
-          <div className="data-layer bronze">
-            <span>01</span>
-            <Database />
-            <strong>Bronze</strong>
-            <small>Raw ingestion</small>
+          <ArrowRight className="architecture-arrow" />
+          <div className="architecture-branches">
+            <div className="architecture-step">
+              <Database />
+              <strong>PostgreSQL</strong>
+              <small>Transactions · durable scores</small>
+            </div>
+            <div className="architecture-step">
+              <Activity />
+              <strong>Redis</strong>
+              <small>Sorted sets · cached rankings</small>
+            </div>
           </div>
-          <div className="data-layer silver">
-            <span>02</span>
-            <Database />
-            <strong>Silver</strong>
-            <small>Clean & transform</small>
-          </div>
-          <div className="data-layer gold">
-            <span>03</span>
-            <Database />
-            <strong>Gold</strong>
-            <small>Analytics-ready</small>
-          </div>
-        </div>
-        <div className="warehouse-footer">
-          <span>SQL + PySpark</span>
-          <span>Fact tables ↔ Dimensions</span>
         </div>
         <p className="illustration-note">
-          Layered pipeline · star-schema dimensional model
+          Conceptual architecture · database fallback for rank lookup
         </p>
       </div>
     );
-  return (
-    <div className="project-visual pdf">
-      <div className="diagram-top">
-        <span>DOCUMENT LEARNING / EXPERIMENT</span>
-        <FileText size={17} />
-      </div>
-      <div className="pdf-flow">
-        <FileText size={46} />
-        <span className="text-lines">
-          <i />
-          <i />
-          <i />
-          <i />
-        </span>
-        <ArrowRight />
-        <div>
-          <Sparkles size={28} />
-          <strong>Extract. Retrieve. Explore.</strong>
-          <small>PDF text → preparation → training / retrieval</small>
+  if (id === "quiz-masters")
+    return (
+      <div className="project-visual architecture-visual quiz-visual">
+        <div className="diagram-top">
+          <span>QUIZ MASTERS / BROWSER EXPERIENCE</span>
+          <LockKeyhole size={17} />
         </div>
+        <div className="quiz-subjects">
+          <span>Math</span>
+          <span>JavaScript</span>
+          <span>HTML</span>
+          <span>CSS</span>
+        </div>
+        <div className="architecture-flow">
+          <div className="architecture-step">
+            <strong>React UI</strong>
+            <small>Subjects & page routing</small>
+          </div>
+          <ArrowRight className="architecture-arrow" />
+          <div className="architecture-step">
+            <Database />
+            <strong>localStorage</strong>
+            <small>Browser-local score history</small>
+          </div>
+        </div>
+        <p className="illustration-note">
+          Conceptual architecture · scores stay in the same browser
+        </p>
       </div>
-      <p className="illustration-note">An exploration with DistilGPT-2</p>
-    </div>
-  );
+    );
+  return null;
 }

@@ -2,7 +2,11 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { navigation, site } from "@/data/site";
-export function Navigation() {
+export function Navigation({
+  experiencePage = false,
+}: {
+  experiencePage?: boolean;
+}) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
   const button = useRef<HTMLButtonElement>(null);
@@ -25,7 +29,7 @@ export function Navigation() {
       <div className="container nav-inner">
         <a
           className="wordmark"
-          href="#top"
+          href={experiencePage ? "/" : "#top"}
           aria-label="Adarsh Kumar, back to top"
         >
           ak<span>.</span>
@@ -54,9 +58,19 @@ export function Navigation() {
           {navigation.map((label) => (
             <a
               key={label}
-              href={`#${label.toLowerCase()}`}
+              href={
+                label === "Experience"
+                  ? "/experience"
+                  : `${experiencePage ? "/" : ""}#${label.toLowerCase()}`
+              }
               aria-current={
-                active === label.toLowerCase() ? "location" : undefined
+                experiencePage
+                  ? label === "Experience"
+                    ? "page"
+                    : undefined
+                  : active === label.toLowerCase() && label !== "Experience"
+                    ? "location"
+                    : undefined
               }
               onClick={() => setOpen(false)}
             >

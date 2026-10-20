@@ -23,13 +23,13 @@ npm start
 ## Content and configuration
 
 - `data/site.ts`: name, email, GitHub, LinkedIn, resume path, optional verified availability, skill groups. Contact uses mailto and opens the visitor's email client.
-- `data/projects.ts`: all four project descriptions, engineering notes, technologies, optional `github` and `demo` URLs. Add verified destinations to each object; unavailable links are omitted entirely.
+- `data/projects.ts`: the four curated project descriptions, engineering notes, technologies, optional `github` and `demo` URLs. Add verified destinations to each object; unavailable links are omitted entirely.
 - `app/page.tsx`: hero, experience, about, and education copy.
 - `components/visuals.tsx`: original lightweight architecture illustrations. These are labeled conceptual diagrams, not screenshots or live telemetry.
 - `app/globals.css`: design tokens, responsive layouts, focus styles, and reduced-motion behavior.
 - Resume links are disabled (`site.resume` is empty). No resume PDF or personal phone number is published. Private documents belong outside `public/`; `private/` and `public/*.pdf` are ignored by Git.
 
-Project descriptions follow the supplied brief. Unverified model accuracy claims are omitted. No per-project repository URLs were supplied.
+Selected work features DreamX, Gaming Leaderboard, Smart Twin, and Quiz Masters. Public source links and the DreamX/Quiz Masters deployment URLs were taken from GitHub. Smart Twin remains internship work without a supplied public repository. Performance and model accuracy claims are omitted. Both deployment homepages were verified to load in a browser on October 20, 2026; end-to-end application flows were not tested.
 
 ## Domain and SEO
 
@@ -50,7 +50,7 @@ Semantic sections, a skip link, focus outlines, native expandable project notes,
 ## Before launch
 
 1. Confirm the public email and social links in `data/site.ts`.
-2. Add verified per-project repository/demo URLs when available.
+2. Recheck the configured repository/demo destinations before launch.
 3. Configure `SITE_URL` and rebuild.
 4. Keep private documents and phone numbers out of the public repository.
 5. Run production checks and browser QA after future changes. Lighthouse scores should be measured on the deployed build, not assumed.
@@ -60,3 +60,7 @@ Semantic sections, a skip link, focus outlines, native expandable project notes,
 The build uses Next.js's supported webpack builder. Turbopack initially built successfully, but subsequent builds hit an internal worker-port permission error in this desktop environment; webpack avoids that environment-specific failure.
 
 Browser checks covered 320px, 768px, and 1440px widths without document overflow, existing internal anchor targets, mobile menu expansion and Escape closure, and expandable engineering notes. No console warnings or errors were observed in the initial production browser checks. Reduced-motion behavior is explicitly implemented in CSS and the reveal component. Lighthouse and automated WCAG audits were not run; no scores are claimed.
+
+## Recruiter-focused update validation
+
+Lint, TypeScript, and the production build passed. Browser checks confirmed the curated project order, valid internal anchors, keyboard expansion of engineering notes, and mobile menu Escape closure with focus restoration. Layouts at 320px, 768px, and 1440px showed no document overflow. Both linked demo homepages loaded. Set SITE_URL before deployment to resolve the existing metadata-base warning.

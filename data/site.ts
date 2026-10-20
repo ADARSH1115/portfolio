@@ -6,7 +6,7 @@ export const site = {
   resume: "", // Intentionally disabled: no resume PDF is published.
   availability: "", // Optional, verified availability statement.
   description:
-    "Adarsh Kumar is a computer science engineer building backend services, full-stack applications, data pipelines, and applied AI projects.",
+    "Adarsh Kumar is a software engineer building backend services and full-stack applications with Node.js, React, PostgreSQL, MongoDB, and Python.",
 };
 export function siteUrl() {
   const value = process.env.SITE_URL;

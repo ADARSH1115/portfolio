@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { InteractiveWords } from "@/components/interactive-words";
 import {
   ArrowDown,
   ArrowRight,
@@ -48,25 +50,29 @@ export default function Home() {
           <div className="hero-grid">
             <div className="hero-copy">
               <p className="eyebrow">
-                <span className="tiny-dot" /> Engineering, from end to end.
+                <span className="tiny-dot" /> SOFTWARE / BACKEND ENGINEERING
               </p>
               <h1>
-                Building reliable
-                <br />
-                software, data systems,
-                <br />
-                and <em>intelligent</em>
-                <br />
-                applications.
+                <InteractiveWords>
+                  Backend services.
+                  <br />
+                  Full-stack apps.
+                  <br />
+                  <em>Built with purpose.</em>
+                </InteractiveWords>
               </h1>
               <p className="hero-description">
-                I’m Adarsh, a computer science engineer focused on backend
-                development, data engineering, and applied AI. I enjoy turning
-                complex problems into practical, well-engineered solutions.
+                I’m Adarsh, a computer science engineering graduate building
+                APIs, data-backed services, and the interfaces that bring them
+                together. Explore my work with Node.js, React, PostgreSQL,
+                MongoDB, and Python.
               </p>
               <div className="hero-actions">
                 <a className="button button-primary" href="#projects">
-                  Explore my work <ArrowDown size={17} />
+                  View projects <ArrowDown size={17} />
+                </a>
+                <a className="button button-secondary" href="#contact">
+                  Contact me <ArrowUpRight size={17} />
                 </a>
                 {site.resume && (
                   <a
@@ -106,12 +112,16 @@ export default function Home() {
           <div className="section-heading" data-reveal>
             <div>
               <p className="eyebrow">01 / SELECTED WORK</p>
-              <h2>Ideas, built into systems.</h2>
+              <h2>
+                <InteractiveWords>
+                  The code. The decisions. The work.
+                </InteractiveWords>
+              </h2>
             </div>
             <p>
-              A closer look at the software I build,
+              Explore the implementation,
               <br />
-              and the engineering behind it.
+              and the decisions behind each project.
             </p>
           </div>
           <div className="projects-grid">
@@ -120,57 +130,31 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section id="experience" className="section experience-section">
-          <div className="container experience-grid" data-reveal>
-            <div>
-              <p className="eyebrow">02 / EXPERIENCE</p>
-              <h2>
-                Connecting software
-                <br />
-                to the physical world.
-              </h2>
-              <p className="section-intro">
-                Hands-on engineering at the intersection of embedded hardware,
-                backend services, and machine learning.
-              </p>
-            </div>
-            <div className="experience-content">
-              <div className="experience-meta">
-                <span>FEB — JUN 2026</span>
-                <span>INTERNSHIP</span>
-              </div>
-              <h3>Industry 4.0 & IIoT Intern</h3>
-              <p className="experience-org">
-                Bajaj Engineering Skills Training (BEST)
-              </p>
-              <p className="muted">
-                Thapar Institute of Engineering & Technology · Patiala
-              </p>
-              <ul>
-                <li>
-                  Developed Smart Twin, bringing sensor telemetry, model
-                  inference, and a monitoring interface into one application.
-                </li>
-                <li>
-                  Integrated ESP32 sensor inputs with Python/Flask APIs and an
-                  XGBoost model for machine-health insights.
-                </li>
-                <li>
-                  Built a React dashboard to present sensor readings, fault
-                  probabilities, and maintenance recommendations.
-                </li>
-              </ul>
-              <a className="text-link" href="#smart-twin-project">
-                Explore the project <ArrowUpRight size={16} />
-              </a>
-            </div>
+        <section
+          id="experience"
+          className="experience-preview container"
+          aria-labelledby="experience-preview-title"
+        >
+          <div>
+            <p className="eyebrow">02 / EXPERIENCE</p>
+            <h2 id="experience-preview-title">
+              <InteractiveWords>
+                Engineering beyond the classroom.
+              </InteractiveWords>
+            </h2>
+            <p>Industry 4.0 & IIoT internship · BEST · Feb–Jun 2026</p>
           </div>
+          <Link className="button button-secondary" href="/experience">
+            View my experience <ArrowUpRight size={17} />
+          </Link>
         </section>
         <section id="skills" className="section container">
           <div className="section-heading" data-reveal>
             <div>
               <p className="eyebrow">03 / TOOLKIT</p>
-              <h2>The tools behind the work.</h2>
+              <h2>
+                <InteractiveWords>The tools behind the work.</InteractiveWords>
+              </h2>
             </div>
             <p>
               Grounded in fundamentals.
@@ -183,7 +167,9 @@ export default function Home() {
               <div className="skill" key={number} data-reveal>
                 <span className="skill-number">{number}</span>
                 <div>
-                  <h3>{title}</h3>
+                  <h3>
+                    <InteractiveWords>{title}</InteractiveWords>
+                  </h3>
                   <p>{list}</p>
                   {note && <small>{note}</small>}
                 </div>
@@ -199,13 +185,15 @@ export default function Home() {
           <div>
             <p className="eyebrow">04 / A LITTLE ABOUT ME</p>
             <h2>
-              Curious about how
-              <br />
-              things work.
-              <br />
-              <em>Intentional</em> about
-              <br />
-              how they’re built.
+              <InteractiveWords>
+                Curious about how
+                <br />
+                things work.
+                <br />
+                <em>Intentional</em> about
+                <br />
+                how they’re built.
+              </InteractiveWords>
             </h2>
           </div>
           <div className="about-copy">
@@ -238,9 +226,11 @@ export default function Home() {
             <div className="contact-grid">
               <div>
                 <h2>
-                  Good software starts
-                  <br />
-                  with a <em>conversation.</em>
+                  <InteractiveWords>
+                    Good software starts
+                    <br />
+                    with a <em>conversation.</em>
+                  </InteractiveWords>
                 </h2>
                 <p>
                   Have an opportunity in software, backend, data, or applied AI?
