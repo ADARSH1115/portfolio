@@ -3,6 +3,7 @@ export const site = {
   email: "adarshpadigela@gmail.com",
   github: "https://github.com/ADARSH1115",
   linkedin: "https://www.linkedin.com/in/adarsh-kumar-1115pa/",
+  leetcode: "https://leetcode.com/u/adarshaadikumar024/",
   resume: "", // Intentionally disabled: no resume PDF is published.
   availability: "", // Optional, verified availability statement.
   description:

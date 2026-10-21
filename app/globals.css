@@ -1745,3 +1745,39 @@ details p {
     margin-bottom: 32px;
   }
 }
+
+.coding-practice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px;
+  margin-bottom: 64px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.coding-practice-copy {
+  max-width: 650px;
+}
+.coding-practice-copy > p:last-child {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+.coding-practice > .button {
+  flex-shrink: 0;
+}
+.social-links {
+  flex-wrap: wrap;
+}
+@media (max-width: 760px) {
+  .coding-practice {
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+}

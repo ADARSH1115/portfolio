@@ -6,6 +6,7 @@ import {
   ArrowUp,
   ArrowUpRight,
   Github,
+  Code2,
   Linkedin,
   Mail,
 } from "lucide-react";
@@ -22,7 +23,7 @@ export default function Home() {
     "@type": "Person",
     name: site.name,
     ...(url ? { url } : {}),
-    sameAs: [site.github, site.linkedin],
+    sameAs: [site.github, site.linkedin, site.leetcode],
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: "Thapar Institute of Engineering & Technology",
@@ -95,6 +96,13 @@ export default function Home() {
                   rel="noopener noreferrer"
                 >
                   <Linkedin size={16} /> LinkedIn <ArrowUpRight size={12} />
+                </a>
+                <a
+                  href={site.leetcode}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Code2 size={16} /> LeetCode <ArrowUpRight size={12} />
                 </a>
               </div>
               {site.availability && <p>{site.availability}</p>}
@@ -178,6 +186,36 @@ export default function Home() {
           </div>
         </section>
         <section
+          id="coding-practice"
+          className="container coding-practice"
+          aria-labelledby="coding-practice-title"
+          data-reveal
+        >
+          <div className="coding-practice-copy">
+            <p className="eyebrow">
+              <Code2 size={16} /> CODING PRACTICE
+            </p>
+            <h2 id="coding-practice-title">
+              <InteractiveWords>
+                Problem-solving, beyond the projects.
+              </InteractiveWords>
+            </h2>
+            <p>
+              Explore my LeetCode profile for my coding practice, submissions,
+              and problem-solving progress.
+            </p>
+          </div>
+          <a
+            className="button button-primary"
+            href={site.leetcode}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Adarsh’s LeetCode profile"
+          >
+            View LeetCode profile <ArrowUpRight size={17} />
+          </a>
+        </section>
+        <section
           id="about"
           className="section container about-grid"
           data-reveal
@@ -257,6 +295,9 @@ export default function Home() {
               </a>
               <a href={site.linkedin} target="_blank" rel="noopener noreferrer">
                 LinkedIn <ArrowUpRight size={15} />
+              </a>
+              <a href={site.leetcode} target="_blank" rel="noopener noreferrer">
+                LeetCode <ArrowUpRight size={15} />
               </a>
               {site.resume && (
                 <a href={site.resume} target="_blank" rel="noopener noreferrer">
